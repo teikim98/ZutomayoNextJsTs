@@ -14,7 +14,7 @@ export default function Menu() {
         setPosition({ x: data.x, y: data.y });
     };
 
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
 
     const onClickClose = (event: React.MouseEvent<HTMLAnchorElement>) => {
         setActive((prev) => !prev);

@@ -1,6 +1,5 @@
 import Menu from "./Menu";
-import React from 'react';
-
+import React from "react";
 
 type AppLayoutProps = {
   children: React.ReactNode;
@@ -10,7 +9,17 @@ export default function Layout({ children }: AppLayoutProps) {
   return (
     <>
       <Menu />
-      <div>{children}</div>
+      <div className="ztmy-container">
+        <div>{children}</div>
+      </div>
+      <style jsx>{`
+        .ztmy-container {
+          margin: 0 auto;
+          width: 100%;
+          padding: 0;
+          overflow: hidden;
+        }
+      `}</style>
     </>
   );
 }

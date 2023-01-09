@@ -7,23 +7,29 @@ export default function Home() {
         <div className="inner-wrapper">
           <picture className="top-bg">
             <source media="(min-width: 769px)" srcSet="/main_kv_pc.jpeg" />
-            <source media="(max-width: 769px)" srcSet="/main_kv_sp.jpeg" />
+            <source media="(max-width: 769px)" srcSet="/main_kv_sp.jpg" />
             <img src="/main_kv_pc.jpeg" alt="bg" />
           </picture>
         </div>
       </div>
 
-
       <style jsx>{`
         .home {
-          width: 100vw;
+          width: 100%;
           max-width: 100%;
-          margin : 0 auto;
+          margin: 0 auto;
         }
-        img{
-          object-fit:cover
-          overflow:hidden;
-          
+
+        .top-bg img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          z-index: 1;
+          pointer-events: none;
         }
       `}</style>
     </>
