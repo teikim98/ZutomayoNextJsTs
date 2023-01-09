@@ -1,6 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from "next/app";
+import Head from "next/head";
+import Layout from "../components/Layout";
+import '../styles/style.css'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Head>
+        <title>Zutomayo</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content="ZutomayoCloneCoding" />
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  );
 }
