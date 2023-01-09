@@ -10,6 +10,7 @@ export default function Home() {
             <source media="(max-width: 769px)" srcSet="/main_kv_sp.jpg" />
             <img src="/main_kv_pc.jpeg" alt="bg" />
           </picture>
+          <h1><img src="/logo_w.svg" alt="" /></h1>
         </div>
       </div>
 
@@ -30,6 +31,20 @@ export default function Home() {
           display: block;
           z-index: 1;
           pointer-events: none;
+        }
+        h1 {
+          display : block;
+          width: 50%;
+          position: relative;
+          left:100px;
+          margin-left: -5px;
+          z-index: 100;
+        }
+        h1 > img {
+          font-size: 0;
+          line-height: 0;
+          width: 100%;
+          height: auto;
         }
       `}</style>
     </>

@@ -101,12 +101,16 @@ export default function Menu() {
               color: #fff;
               background-color: #6f2add;
               padding: 10px;
-              font-size: 20px;
+              font-size: 1.5rem;
             }
             .f-px {
-              font-family: "";
-              font-weight: normal;
+              font-size : 1.5rem; 
+              font-weight: bold;
               font-style: normal;
+              transition : 0.3s;
+            }
+            .f-px:hover{
+                color : red;
             }
             .ztmy-pcmove-cont {
               margin: 0 !important;
