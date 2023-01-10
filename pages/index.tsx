@@ -7,8 +7,6 @@ export default function Home() {
     <>
       <div id="ztmy" className="home">
         <HomePopup width={200} height={100}></HomePopup>
-        <HomePopup width={300} height={50}></HomePopup>
-        <HomePopup width={100} height={200}></HomePopup>
         <div className="inner-wrapper">
           <picture className="top-bg">
             <source media="(min-width: 769px)" srcSet="/main_kv_pc.jpeg" />
