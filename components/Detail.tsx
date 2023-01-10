@@ -7,11 +7,24 @@ type AppLayoutProps = {
 };
 
 export default function Detail({ children, content }: AppLayoutProps) {
+    const showSettings = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+    };
+
     return (
         <>
             <div className="detail-body">
                 <header className="ztmy-header">
                     <div className="header-inner">
+                        <div className="ztmy-header-menu" id="ztmy-header-menu">
+                            <div className="ztmy-burger" id="ztmy-burger">
+                                <div className="ztmy-burger-icon">
+                                    <span id="ztmy-burger-1" className="ztmy-burger-line"></span>
+                                    <span id="ztmy-burger-2" className="ztmy-burger-line"></span>
+                                    <span id="ztmy-burger-3" className="ztmy-burger-line"></span>
+                                </div>
+                            </div>
+                        </div>
                         <div className="ztmy-header-logo">
                             <h1>
                                 <Link href="/">
@@ -88,7 +101,7 @@ export default function Detail({ children, content }: AppLayoutProps) {
         }
         @media screen and (min-width: 769px) {
           .ztmy-header-title {
-            text-align: right;
+            text-align: center;
           }
         }
         .ztmy-header-title h2 {
@@ -118,6 +131,58 @@ export default function Detail({ children, content }: AppLayoutProps) {
           font-style: normal;
           font-weight: 700;
         }
+        .ztmy-header-menu {
+          cursor: pointer;
+          position: relative;
+          z-index: 1000;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          .ztmy-header-menu {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+          }
+        }
+
+        @media (min-width: 992px) {
+          .ztmy-header-menu {
+            display: none;
+          }
+        }
+
+        .ztmy-header-menu .ztmy-burger {
+          padding: 5px;
+        }
+
+        .ztmy-header-menu .ztmy-burger-icon {
+          position: relative;
+          width: 24px;
+        }
+
+        .ztmy-header-menu .ztmy-burger-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: #000;
+          border-radius: 2px;
+          transition: all 0.3s;
+        }
+
+        .ztmy-header-menu .ztmy-burger-line:nth-child(1) {
+          top: -7px;
+        }
+
+        .ztmy-header-menu .ztmy-burger-line:nth-child(2) {
+          top: 0px;
+        }
+
+        .ztmy-header-menu .ztmy-burger-line:nth-child(3) {
+          top: 7px;
+        }
+
         .detail-wrap {
           margin: 0 auto;
           min-height: calc(100vh - 94px - 94px);
