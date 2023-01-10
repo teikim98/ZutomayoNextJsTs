@@ -64,6 +64,13 @@ export default function Popup({ width, height }: BoxLayoutProps) {
                 </Draggable>
             )}
             <style jsx>{`
+        .popup-box {
+          width: 0;
+          height: 0;
+          overflow: hidden;
+          animation: showBox 0.5s ease-in;
+          transform-origin: center; /* optional to set the scale starting point*/
+        }
         .ztmy-pcmove-menu {
           display: block;
           position: fixed;
@@ -94,7 +101,7 @@ export default function Popup({ width, height }: BoxLayoutProps) {
           }
           100% {
             height: ${height}px;
-          width: ${width}px;
+            width: ${width}px;
             transform: scale(1);
           }
         }
