@@ -13,11 +13,11 @@ export default function Layout({ children }: AppLayoutProps) {
         <div>{children}</div>
       </div>
       <style jsx>{`
-        .ztmy-container {
+        /* .ztmy-container {
           margin: 0 auto;
           width: 100%;
           padding: 0;
-        }
+        } */
       `}</style>
     </>
   );

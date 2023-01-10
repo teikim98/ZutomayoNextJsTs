@@ -1,7 +1,11 @@
-export default function News(){
+import Detail from "../components/Detail"
+
+export default function News() {
     return (
         <>
-            <h2>this is News</h2>
+            <Detail content='News'>
+                <h2>this is News</h2>
+            </Detail>
         </>
     )
 }

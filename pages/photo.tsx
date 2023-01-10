@@ -1,7 +1,11 @@
-export default function Photo(){
+import Detail from "../components/Detail"
+
+export default function Photo() {
     return (
         <>
-            <h2>this is photo</h2>
+            <Detail content='Photo'>
+                <h2>this is Photo</h2>
+            </Detail>
         </>
     )
 }

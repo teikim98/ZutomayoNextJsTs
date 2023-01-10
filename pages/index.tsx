@@ -36,6 +36,7 @@ export default function Home() {
           display : block;
           width: 50%;
           position: relative;
+          top:50px;
           left:100px;
           margin-left: -5px;
           z-index: 100;

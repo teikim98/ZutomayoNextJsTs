@@ -105,7 +105,7 @@ export default function Menu() {
             }
             .f-px {
               font-size : 1.5rem; 
-              font-weight: bold;
+              font-weight: regular;
               font-style: normal;
               transition : 0.3s;
             }

@@ -1,7 +1,11 @@
-export default function Profile(){
+import Detail from "../components/Detail"
+
+export default function Profile() {
     return (
         <>
-            <h2>this is profile</h2>
+            <Detail content='Profile'>
+                <h2>this is Profile</h2>
+            </Detail>
         </>
     )
 }
