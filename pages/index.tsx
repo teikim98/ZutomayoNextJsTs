@@ -94,17 +94,19 @@ export default function Home() {
           }
         }
         .ztmy-top--nav li {
-          margin-bottom: 3px;
-          transition : 0.3s;
+          margin-bottom: 5px;
+          background: linear-gradient(to left, #4f4f4f 50%, violet 50%) right;
+          background-size: 200%;
+          transition: 0.5s ease-in-out;
         }
-        .ztmy-top--nav li:hover{
-          background-color : violet;
+        .ztmy-top--nav li:hover {
+          background-position: left;
         }
+
         .ztmy-top--nav li a {
-          
           line-height: 1;
           position: relative;
-          display: inline-block
+          display: inline-block;
         }
         .f-px {
           font-weight: normal;
@@ -112,7 +114,7 @@ export default function Home() {
         }
         span {
           font-size: 25px;
-          color : white;
+          color: white;
           letter-spacing: 0.1rem;
         }
       `}</style>
