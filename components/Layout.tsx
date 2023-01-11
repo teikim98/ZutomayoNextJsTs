@@ -13,11 +13,14 @@ export default function Layout({ children }: AppLayoutProps) {
         <div>{children}</div>
       </div>
       <style jsx>{`
-        /* .ztmy-container {
-          margin: 0 auto;
-          width: 100%;
-          padding: 0;
-        } */
+        .ztmy-container {
+          position: relative;
+          min-height: 100vh;
+          background-repeat: repeat-y;
+          background-position: top center;
+          background-image: url(/bg_contents_pc.jpeg);
+          background-size: 100%;
+        }
       `}</style>
     </>
   );

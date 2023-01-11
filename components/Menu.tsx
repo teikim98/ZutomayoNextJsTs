@@ -47,8 +47,8 @@ export default function Menu() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/photo/">
-                                        <p className="f-px">PHOTO</p>
+                                    <Link href="/release/">
+                                        <p className="f-px">release</p>
                                     </Link>
                                 </li>
                                 <li>
@@ -72,7 +72,7 @@ export default function Menu() {
               display: block;
               position: fixed;
               z-index: 300;
-              top: 80px;
+              top: 280px;
               left: 26px;
               height: 250px;
               width: 182px;
@@ -116,7 +116,7 @@ export default function Menu() {
               transition : 0.3s;
             }
             .f-px:hover{
-                color : red;
+                color : violet;
             }
             .ztmy-pcmove-cont {
               margin: 0 !important;

@@ -1,0 +1,76 @@
+{
+  "content": [
+    {
+      "id": 1,
+      "time": "2022.09.16",
+      "title": "12 inch Analog Single",
+      "titleBr": "「消えてしまいそうです」",
+      "img": "/2022.09.16.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 2,
+      "time": "2022.08.24",
+      "title": "ZUTOMAYO FACTORY",
+      "titleBr": "「鷹は飢えても踊り忘れず」",
+      "img": "/2022.08.24.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 3,
+      "time": "2022.2.16",
+      "title": "4th MINI ALBUM",
+      "titleBr": "伸び仕草懲りて暇乞い",
+      "img": "/2022.2.16.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 4,
+      "time": "2021.9.29",
+      "title": "LIVE Blu-ray",
+      "titleBr": "CLEANING LABO 「温れ落ち度」",
+      "img": "/2021.9.29.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 5,
+      "time": "2021.2.10",
+      "title": "2nd FULL ALBUM",
+      "titleBr": "ぐされ",
+      "img": "/2021.2.10.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 6,
+      "time": "2020.8.5",
+      "title": "3rd MINI ALBUM",
+      "titleBr": "朗らかな皮膚とて不服",
+      "img": "/2020.8.5.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 7,
+      "time": "2019.10.30",
+      "title": "1st FULL ALBUM",
+      "titleBr": "潜潜話",
+      "img": "/2019.10.30.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 8,
+      "time": "2019.6.12",
+      "title": "2nd MINI ALBUM",
+      "titleBr": "今は今で誓いは笑みで",
+      "img": "/2019.6.12.jpeg",
+      "imgLink": ""
+    },
+    {
+      "id": 9,
+      "time": "2018.11.14",
+      "title": "1st MINI ALBUM",
+      "titleBr": "正しい偽りからの起床",
+      "img": "/2018.11.14.jpeg",
+      "imgLink": ""
+    }
+  ]
+}

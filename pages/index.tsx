@@ -29,8 +29,8 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link className="f-px" href="/photo/">
-                  <span>PHOTO</span>
+                <Link className="f-px" href="/release/">
+                  <span>RELEASE</span>
                 </Link>
               </li>
               <li>

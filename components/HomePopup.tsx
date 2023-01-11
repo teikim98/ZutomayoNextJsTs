@@ -40,7 +40,7 @@ export default function Popup({ width, height }: BoxLayoutProps) {
                         className={
                             active
                                 ? `popup-box ${showPopup ? "ztmy-pcmove-menu" : ""}`
-                                : "ztmy-pcmove-menu windowmini"
+                                : "windowmini"
                         }
                         id="pcMenu"
                     >
@@ -86,7 +86,7 @@ export default function Popup({ width, height }: BoxLayoutProps) {
           border: solid 1px #6f2add;
           box-shadow: 3px 3px 0 #a3919e;
           overflow: hidden;
-          transition: height 0.3s;
+          transition: height 1.5s linear;
           cursor: move;
           position: fixed;
           z-index: 1000;
@@ -107,8 +107,8 @@ export default function Popup({ width, height }: BoxLayoutProps) {
         }
 
         .windowmini {
-          height: 0px;
-          width: 0px;
+            display : none;
+            opacity : 0;
         }
         .ztmy-pcmove-inner {
           position: relative;

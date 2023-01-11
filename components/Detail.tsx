@@ -13,43 +13,40 @@ export default function Detail({ children, content }: AppLayoutProps) {
 
     return (
         <>
-            <div className="detail-body">
-                <header className="ztmy-header">
-                    <div className="header-inner">
-                        <div className="ztmy-header-menu" id="ztmy-header-menu">
-                            <div className="ztmy-burger" id="ztmy-burger">
-                                <div className="ztmy-burger-icon">
-                                    <span id="ztmy-burger-1" className="ztmy-burger-line"></span>
-                                    <span id="ztmy-burger-2" className="ztmy-burger-line"></span>
-                                    <span id="ztmy-burger-3" className="ztmy-burger-line"></span>
-                                </div>
+            <header className="ztmy-header">
+                <div className="header-inner">
+                    <div className="ztmy-header-menu" id="ztmy-header-menu">
+                        <div className="ztmy-burger" id="ztmy-burger">
+                            <div className="ztmy-burger-icon">
+                                <span id="ztmy-burger-1" className="ztmy-burger-line"></span>
+                                <span id="ztmy-burger-2" className="ztmy-burger-line"></span>
+                                <span id="ztmy-burger-3" className="ztmy-burger-line"></span>
                             </div>
                         </div>
-                        <div className="ztmy-header-logo">
-                            <h1>
-                                <Link href="/">
-                                    <img src="/logo.svg" alt="" />
-                                </Link>
-                            </h1>
-                        </div>
-                        <div className="ztmy-header-title">
-                            <h2 className="f-tt--b">
-                                <span>{content}</span>
-                            </h2>
-                        </div>
                     </div>
-                </header>
-                <article className="detail-wrap">{children}</article>
-            </div>
+                    <div className="ztmy-header-logo">
+                        <h1>
+                            <Link href="/">
+                                <img src="/logo.svg" alt="" />
+                            </Link>
+                        </h1>
+                    </div>
+                    <div className="ztmy-header-title">
+                        <h2 className="f-tt--b">
+                            <span>{content}</span>
+                        </h2>
+                    </div>
+                </div>
+            </header>
+            <article className="detail-wrap">{children}</article>
             <style jsx>{`
-        .detail-body {
-          position: relative;
-          min-height: 100vh;
-          background-repeat: repeat-y;
-          background-position: top center;
-          background-image: url(/bg_contents_pc.jpeg);
-          background-size: 100%;
+        article {
+          width: 100%;
+          max-width: 960px;
+          margin: 0 auto;
+          overflow: hidden;
         }
+
         .ztmy-header {
           text-align: center;
           margin: 0;
