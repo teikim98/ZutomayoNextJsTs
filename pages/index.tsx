@@ -83,7 +83,7 @@ export default function Home() {
         }
         .ztmy-top--nav {
           position: absolute;
-          top: 25px;
+          top: 225px;
           left: 25px;
           z-index: 20;
         }
@@ -94,19 +94,27 @@ export default function Home() {
           }
         }
         .ztmy-top--nav li {
-          margin-bottom: 5px;
-          background: linear-gradient(to left, #4f4f4f 50%, violet 50%) right;
-          background-size: 200%;
-          transition: 0.5s ease-in-out;
+          margin-bottom: 1rem;
         }
-        .ztmy-top--nav li:hover {
-          background-position: left;
-        }
-
         .ztmy-top--nav li a {
           line-height: 1;
           position: relative;
           display: inline-block;
+        }
+        .ztmy-top--nav li a::before {
+          content: "";
+          position: absolute;
+          z-index: 9999;
+          transition: all 0.3s;
+          background-color: #8027d0;
+          width: 0%;
+          height: 100%;
+          bottom: -5px;
+          left: 5px;
+        }
+
+        .ztmy-top--nav li a:hover::before {
+          width: 100%;
         }
         .f-px {
           font-weight: normal;
@@ -117,6 +125,7 @@ export default function Home() {
           color: white;
           letter-spacing: 0.1rem;
         }
+        
       `}</style>
     </>
   );

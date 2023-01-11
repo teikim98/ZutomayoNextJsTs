@@ -101,17 +101,13 @@ const DiscoList: React.FC<discoProps> = ({
           text-align: center;
         }
 
-        .ztmy-disco-image a img {
-          transition: all 0.3s;
+        .ztmy-disco-image:hover img{
+            transform: scale(1.1);
         }
 
         .ztmy-disco-image a {
           overflow: hidden;
           display: block;
-        }
-
-        .ztmy-disco-image a:hover > img {
-          transform: scale(1.1);
         }
 
         .ztmy-disco-date {

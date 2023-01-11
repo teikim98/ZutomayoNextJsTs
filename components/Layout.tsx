@@ -1,5 +1,6 @@
 import Menu from "./Menu";
 import React from "react";
+import Footer from "./Footer";
 
 type AppLayoutProps = {
   children: React.ReactNode;
@@ -9,8 +10,9 @@ export default function Layout({ children }: AppLayoutProps) {
   return (
     <>
       <Menu />
-      <div className="ztmy-container">
+      <div className="ztmy-container home">
         <div>{children}</div>
+        <Footer />
       </div>
       <style jsx>{`
         .ztmy-container {

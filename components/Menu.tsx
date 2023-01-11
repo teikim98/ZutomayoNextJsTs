@@ -48,7 +48,7 @@ export default function Menu() {
                                 </li>
                                 <li>
                                     <Link href="/release/">
-                                        <p className="f-px">release</p>
+                                        <p className="f-px">RELEASE</p>
                                     </Link>
                                 </li>
                                 <li>
@@ -74,8 +74,8 @@ export default function Menu() {
               z-index: 300;
               top: 280px;
               left: 26px;
-              height: 250px;
-              width: 182px;
+              height: 220px;
+              width: 150px;
               background-size: 100%;
               background-position: top;
               background-repeat: no-repeat;
@@ -110,8 +110,7 @@ export default function Menu() {
               font-size: 1.5rem;
             }
             .f-px {
-              font-size : 1.5rem; 
-              font-weight: regular;
+              font-size : 1.3rem; 
               font-style: normal;
               transition : 0.3s;
             }
@@ -119,7 +118,8 @@ export default function Menu() {
                 color : violet;
             }
             .ztmy-pcmove-cont {
-              margin: 0 !important;
+              margin: 0;
+              margin-left: 3px;
             }
             .ztmy-pcmove-inner .btn-close-menu {
               position: absolute;
