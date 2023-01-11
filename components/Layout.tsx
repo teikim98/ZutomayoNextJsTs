@@ -10,7 +10,7 @@ export default function Layout({ children }: AppLayoutProps) {
   return (
     <>
       <Menu />
-      <div className="ztmy-container home">
+      <div className="ztmy-container">
         <div>{children}</div>
         <Footer />
       </div>
