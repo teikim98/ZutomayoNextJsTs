@@ -32,8 +32,7 @@ export default function Footer() {
           text-align: center;
           padding: 21px 25px 21px;
           height: 90px;
-          z-index:2;
-          margin: 0 -25px;
+          margin: 0;
         }
 
         .ztmy-footer-copy {
@@ -73,7 +72,7 @@ export default function Footer() {
             z-index: 3;
             left: 94px;
             bottom: 50px;
-            width: auto;
+            width: 100vw;
             margin: 0;
             padding: 0;
             background: transparent;
