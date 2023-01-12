@@ -152,7 +152,7 @@ export default function Home() {
           padding: 21px 25px 21px;
           height: 90px;
           z-index:2;
-          margin: 0 -25px;
+          margin: 0;
           bottom:0;
           left :3rem;
           text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;"
