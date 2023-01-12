@@ -1,37 +1,38 @@
 export default function Footer() {
-    return (
-        <>
-            <footer className="ztmy-footer">
-                <div className="ztmy-footer-inner">
-                    <ul className="ztmy-sns">
-                        <li>
-                            <a href="https://www.youtube.com/channel/UCv6P5nsS9rP4tDtFlqLU_QQ"><img src="/icon_yt.png" alt="Youtube" /></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/zutomayo"><img src="/icon_tw1.png" alt="TwiiterZTMY" /></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/zutomayo_staff"><img src="/icon_tw2.png" alt="TwiiterStaff" /></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/zutomayo/?hl=ja"><img src="/icon_in.png" alt="Instagram" /></a>
-                        </li>
-                    </ul>
-                    <div>
-                        <p className="ztmy-footer-copy ztmy-cmn-txt-sm ztmy-pc">
-                            <small className="f-tt--b">
-                                ALL RIGHTS RESERVED 2023&copy;ZUTOMAYO
-                            </small>
-                        </p>
-                    </div>
-                </div>
-            </footer>
-            <style jsx>{`
+  return (
+    <>
+      <footer className="ztmy-footer">
+        <div className="ztmy-footer-inner">
+          <ul className="ztmy-sns">
+            <li>
+              <a href="https://www.youtube.com/channel/UCv6P5nsS9rP4tDtFlqLU_QQ"><img src="/icon_yt.png" alt="Youtube" /></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/zutomayo"><img src="/icon_tw1.png" alt="TwiiterZTMY" /></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/zutomayo_staff"><img src="/icon_tw2.png" alt="TwiiterStaff" /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/zutomayo/?hl=ja"><img src="/icon_in.png" alt="Instagram" /></a>
+            </li>
+          </ul>
+          <div>
+            <p className="ztmy-footer-copy ztmy-cmn-txt-sm ztmy-pc">
+              <small className="f-tt--b">
+                ALL RIGHTS RESERVED 2023&copy;ZUTOMAYO
+              </small>
+            </p>
+          </div>
+        </div>
+      </footer>
+      <style jsx>{`
 
         .ztmy-footer {
           text-align: center;
           padding: 21px 25px 21px;
           height: 90px;
+          z-index:2;
           margin: 0 -25px;
         }
 
@@ -116,6 +117,6 @@ export default function Footer() {
         }
         
       `}</style>
-        </>
-    );
+    </>
+  );
 }
