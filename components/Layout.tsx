@@ -18,6 +18,7 @@ export default function Layout({ children }: AppLayoutProps) {
         .ztmy-container {
           position: relative;
           min-height: 100vh;
+          max-width: 100vw;
           background-repeat: repeat-y;
           background-position: top center;
           background-image: url(/bg_contents_pc.jpeg);

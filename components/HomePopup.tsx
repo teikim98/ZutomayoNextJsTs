@@ -3,80 +3,84 @@ import { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 
 type BoxLayoutProps = {
-    width: number;
-    height: number;
+  width: number;
+  height: number;
+  top: number;
+  left: number;
+  time: number;
 };
 
-export default function Popup({ width, height }: BoxLayoutProps) {
-    interface Position {
-        x: number;
-        y: number;
-    }
+export default function Popup({ width, height, top, left, time }: BoxLayoutProps) {
+  interface Position {
+    x: number;
+    y: number;
+  }
 
-    const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
 
-    const trackPos = (data: Position) => {
-        setPosition({ x: data.x, y: data.y });
-    };
+  const trackPos = (data: Position) => {
+    setPosition({ x: data.x, y: data.y });
+  };
 
-    const [active, setActive] = useState(true);
+  const [active, setActive] = useState(true);
 
-    const onClickClose = (event: React.MouseEvent<HTMLAnchorElement>) => {
-        setActive((prev) => !prev);
-        event.preventDefault();
-    };
+  const onClickClose = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    setActive((prev) => !prev);
+    event.preventDefault();
+  };
 
-    const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
-    useEffect(() => {
-        setShowPopup(true);
-    }, []);
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
 
-    return (
-        <>
-            {showPopup && (
-                <Draggable onDrag={(e, data) => trackPos(data)}>
-                    <div
-                        className={
-                            active
-                                ? `popup-box ${showPopup ? "ztmy-pcmove-menu" : ""}`
-                                : "windowmini"
-                        }
-                        id="pcMenu"
-                    >
-                        <div className="title f-px">Popup</div>
-                        <div className="ztmy-pcmove-inner">
-                            <ul className="ztmy-pcmove-cont">
-                                <li>
-                                    <Link href="/">
-                                        <p className="f-px">inside</p>
-                                    </Link>
-                                </li>
-                            </ul>
-                            <a
-                                href="#"
-                                className="btn-close-menu"
-                                data-close="#pcMenu"
-                                onClick={onClickClose}
-                            ></a>
-                        </div>
-                    </div>
-                </Draggable>
-            )}
-            <style jsx>{`
+  return (
+    <>
+      {showPopup && (
+        <Draggable onDrag={(e, data) => trackPos(data)}>
+          <div
+            className={
+              active
+                ? `popup-box ${showPopup ? "ztmy-pcmove-menu" : ""}`
+                : "windowmini"
+            }
+            id="pcMenu"
+          >
+            <div className="title f-px">Popup</div>
+            <div className="ztmy-pcmove-inner">
+              <ul className="ztmy-pcmove-cont">
+                <li>
+                  <Link href="/">
+                    <p className="f-px">inside</p>
+                  </Link>
+                </li>
+              </ul>
+              <a
+                href="#"
+                className="btn-close-menu"
+                data-close="#pcMenu"
+                onClick={onClickClose}
+              ></a>
+            </div>
+          </div>
+        </Draggable>
+      )}
+      <style jsx>{`
         .popup-box {
           width: 0;
           height: 0;
           overflow: hidden;
-          animation: showBox 0.5s ease-in;
-          transform-origin: center; /* optional to set the scale starting point*/
+          animation: showBox 0.7s ease-in;
+          animation-duration: ${time}s;
+          transform-origin: top; /* optional to set the scale starting point*/
         }
         .ztmy-pcmove-menu {
           display: block;
           position: fixed;
           z-index: 300;
-          top: 500px;
-          left: 300px;
+          top: ${top}px;
+          left: ${left}px;
           height: ${height}px;
           width: ${width}px;
           background-size: 100%;
@@ -112,7 +116,7 @@ export default function Popup({ width, height }: BoxLayoutProps) {
         }
         .ztmy-pcmove-inner {
           position: relative;
-          padding: 59px 8px 0 8px;
+          padding: 37px 8px 0 8px;
         }
         .ztmy-pcmove-menu .title {
           margin: 0;
@@ -120,8 +124,8 @@ export default function Popup({ width, height }: BoxLayoutProps) {
           top: 0;
           left: 0;
           width: 100%;
-          height: 46px;
-          line-height: 26px;
+          height: 30px;
+          line-height: 8px;
           color: #fff;
           background-color: #6f2add;
           padding: 10px;
@@ -129,7 +133,7 @@ export default function Popup({ width, height }: BoxLayoutProps) {
           font-weight: bold;
         }
         .f-px {
-          font-size: 1.5rem;
+          font-size: 1rem;
           font-weight: regular;
           font-style: normal;
           transition: 0.3s;
@@ -142,10 +146,10 @@ export default function Popup({ width, height }: BoxLayoutProps) {
         }
         .ztmy-pcmove-inner .btn-close-menu {
           position: absolute;
-          top: 11px;
-          right: 11px;
-          width: 28px;
-          height: 28px;
+          top: 7px;
+          right: 7px;
+          width: 14px;
+          height: 14px;
           font-size: 0;
           line-height: 0;
           background-image: url(/btn_news_window_close.png);
@@ -153,20 +157,7 @@ export default function Popup({ width, height }: BoxLayoutProps) {
           background-position: center;
           background-repeat: no-repeat;
         }
-        .btn-open-menu {
-          position: absolute;
-          top: 11px;
-          right: 11px;
-          width: 28px;
-          height: 28px;
-          font-size: 0;
-          line-height: 0;
-          background-image: url(/btn_news_window_open.png);
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
       `}</style>
-        </>
-    );
+    </>
+  );
 }
