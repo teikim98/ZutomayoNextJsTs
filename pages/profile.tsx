@@ -21,6 +21,7 @@ export default function Profile() {
                         <p>
                             今宵もしゃもじでフロアを沸かす。これまでのことはウィキペディア参照するのが分かりやすい。
                         </p>{" "}
+                        <p>real</p>
                     </div>
                 </section>
             </Detail>

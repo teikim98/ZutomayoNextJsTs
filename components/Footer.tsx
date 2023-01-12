@@ -73,7 +73,7 @@ export default function Footer() {
             z-index: 3;
             left: 94px;
             bottom: 50px;
-            width: auto;
+            width: 100vw;
             margin: 0;
             padding: 0;
             background: transparent;
