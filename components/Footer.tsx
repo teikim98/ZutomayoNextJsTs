@@ -33,7 +33,7 @@ export default function Footer() {
           padding: 21px 25px 21px;
           height: 90px;
           z-index:2;
-          margin: 0 -25px;
+          margin: 0;
         }
 
         .ztmy-footer-copy {
