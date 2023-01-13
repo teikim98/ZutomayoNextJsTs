@@ -1,40 +1,97 @@
-import Link from "next/link"
+import Link from "next/link";
+import { use, useState } from "react";
 
 type AppLayoutProps = {
-    content: string;
+  content: string;
 };
 
 export default function Header({ content }: AppLayoutProps) {
 
-    return (
-        <>
-            <header className="ztmy-header">
-                <div className="header-inner">
-                    <div className="ztmy-header-menu" id="ztmy-header-menu">
-                        <div className="ztmy-burger" id="ztmy-burger">
-                            <div className="ztmy-burger-icon">
-                                <span id="ztmy-burger-1" className="ztmy-burger-line"></span>
-                                <span id="ztmy-burger-2" className="ztmy-burger-line"></span>
-                                <span id="ztmy-burger-3" className="ztmy-burger-line"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="ztmy-header-logo">
-                        <h1>
-                            <Link href="/">
-                                <img src="/logo.svg" alt="" />
-                            </Link>
-                        </h1>
-                    </div>
-                    <div className="ztmy-header-title">
-                        <h2 className="f-tt--b">
-                            <span>{content}</span>
-                        </h2>
-                    </div>
-                </div>
-            </header>
-            <style jsx>{`
-        
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <header className="ztmy-header">
+        <div className="header-inner">
+          <div
+            onClick={() => {
+              setOpen(prev => !prev)
+            }}
+            className={open ? "ztmy-header-menu-open ztmy-header-menu" : "ztmy-header-menu"}
+            id="ztmy-header-menu"
+          >
+            <div className="ztmy-burger" id="ztmy-burger">
+              <div className="ztmy-burger-icon">
+                <span id="ztmy-burger-1" className="ztmy-burger-line"></span>
+                <span id="ztmy-burger-2" className="ztmy-burger-line"></span>
+                <span id="ztmy-burger-3" className="ztmy-burger-line"></span>
+              </div>
+            </div>
+          </div>
+          <div className="ztmy-header-logo">
+            <h1>
+              <Link href="/">
+                <img src="/logo.svg" alt="" />
+              </Link>
+            </h1>
+          </div>
+          <div className="ztmy-header-title">
+            <h2 className="f-tt--b">
+              <span>{content}</span>
+            </h2>
+          </div>
+        </div>
+        <nav className={open ? "ztmy-fix-menu-open" : "ztmy-fix-menu"}>
+          <div className="ztmy-fix-menu-inner">
+            <ul className="ztmy-menu-cont">
+              <li>
+                <Link href="/">
+                  <p className="f-px">TOP</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="/news">
+                  <p className="f-px">NEWS</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="/release">
+                  <p className="f-px">RELEASE</p>
+                </Link>
+              </li>
+              <li>
+                <Link href="/profile">
+                  <p className="f-px">PROFILE</p>
+                </Link>
+              </li>
+            </ul>
+            <ul className="ztmy-menu-sns">
+              <li>
+                <a href="https://www.youtube.com/channel/UCv6P5nsS9rP4tDtFlqLU_QQ">
+                  <img src="/icon_yt.png" alt="Youtube" />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/zutomayo">
+                  <img src="/icon_tw1.png" alt="Twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/zutomayo_staff">
+                  <img src="/icon_tw2.png" alt="Twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/zutomayo/?hl=ja">
+                  <img src="/icon_in.png" alt="Instagram" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <style jsx>{`
         .ztmy-header {
           text-align: center;
           margin: 0;
@@ -168,7 +225,69 @@ export default function Header({ content }: AppLayoutProps) {
           top: 7px;
         }
 
+        .ztmy-header-menu-open .ztmy-burger-line {
+          background-color : white;
+        }
+
+        .ztmy-header-menu-open .ztmy-burger-line:nth-child(1) {
+          top:0;
+			transform: rotate(-45deg);
+        }
+
+        .ztmy-header-menu-open .ztmy-burger-line:nth-child(2) {
+          height: 0px;
+        }
+
+        .ztmy-header-menu-open .ztmy-burger-line:nth-child(3) {
+          top:0;
+			transform: rotate(45deg);
+        }
+
+
+
+        .ztmy-fix-menu {
+          display: block;
+          position: fixed;
+          left: -100vw;
+          top: 0;
+          width: 300px;
+          max-width: 90vw;
+          height: 100%;
+          overflow: hidden;
+          background-color: #8027d0;
+          z-index: 990;
+          transition: left 0.3s;
+        }
+
+        .ztmy-fix-menu-open {
+          display: block;
+          position: fixed;
+          left: 0;
+          top: 0;
+          width: 300px;
+          max-width: 90vw;  
+          height: 100%;
+          overflow: hidden;
+          background-color: #8027d0;
+          z-index: 990;
+          transition: left 0.3s;
+        }
+
+        .ztmy-fix-menu-inner {
+          padding: 80px 0px 0 32px;
+        }
+
+        .ztmy-menu-cont li {
+          margin-bottom: 0.5rem;
+        }
+        .ztmy-menu-cont li a {
+          display: inline-block;
+          color: #ffffff;
+          font-size: 18px;
+          line-height: 1;
+          letter-spacing: 0.1rem;
+        }
       `}</style>
-        </>
-    )
+    </>
+  );
 }
