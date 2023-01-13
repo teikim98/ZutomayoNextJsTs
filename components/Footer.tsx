@@ -1,7 +1,13 @@
+import { useRouter } from "next/router";
+
+
 export default function Footer() {
+
+  const router = useRouter();
+
   return (
     <>
-      <footer className="ztmy-footer">
+      <footer className={router.pathname === '/' ? 'd-none' : "ztmy-footer"}>
         <div className="ztmy-footer-inner">
           <ul className="ztmy-sns">
             <li>
@@ -27,6 +33,10 @@ export default function Footer() {
         </div>
       </footer>
       <style jsx>{`
+      
+      .d-none{
+        display : none;
+      }
 
         .ztmy-footer {
           text-align: center;

@@ -14,7 +14,7 @@ interface discoProps {
 export default function Release() {
   return (
     <>
-      <Detail content="release">
+      <Detail contentName="release">
         <section className="ztmy-disco-wrap">
           {disco.content.map((album: discoProps) => (
             <DiscoList key={album.id} {...album} />

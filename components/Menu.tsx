@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import Draggable from "react-draggable";
-import { useRouter } from "next/router";
 export default function Menu() {
     interface Position {
         x: number;
@@ -21,52 +20,48 @@ export default function Menu() {
         event.preventDefault();
     };
 
-    const router = useRouter();
-    const isHome = router.pathname === '/' ? 'd-none' : ''
     return (
         <>
-            <div className={isHome}>
-                <Draggable onDrag={(e, data) => trackPos(data)}>
-                    <div
-                        className={
-                            active ? "ztmy-pcmove-menu" : "ztmy-pcmove-menu windowmini"
-                        }
-                        id="pcMenu"
-                    >
-                        <div className="title f-px">Menu</div>
-                        <div className="ztmy-pcmove-inner">
-                            <ul className="ztmy-pcmove-cont">
-                                <li>
-                                    <Link href="/">
-                                        <p className="f-px">TOP</p>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/news/">
-                                        <p className="f-px">NEWS</p>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/release/">
-                                        <p className="f-px">RELEASE</p>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/profile/">
-                                        <p className="f-px">PROFILE</p>
-                                    </Link>
-                                </li>
-                            </ul>
-                            <a
-                                href="#"
-                                className={active ? "btn-close-menu" : "btn-open-menu"}
-                                data-close="#pcMenu"
-                                onClick={onClickClose}
-                            ></a>
-                        </div>
+            <Draggable onDrag={(e, data) => trackPos(data)}>
+                <div
+                    className={
+                        active ? "ztmy-pcmove-menu" : "ztmy-pcmove-menu windowmini"
+                    }
+                    id="pcMenu"
+                >
+                    <div className="title f-px">Menu</div>
+                    <div className="ztmy-pcmove-inner">
+                        <ul className="ztmy-pcmove-cont">
+                            <li>
+                                <Link href="/">
+                                    <p className="f-px">TOP</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/news/">
+                                    <p className="f-px">NEWS</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/release/">
+                                    <p className="f-px">RELEASE</p>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/profile/">
+                                    <p className="f-px">PROFILE</p>
+                                </Link>
+                            </li>
+                        </ul>
+                        <a
+                            href="#"
+                            className={active ? "btn-close-menu" : "btn-open-menu"}
+                            data-close="#pcMenu"
+                            onClick={onClickClose}
+                        ></a>
                     </div>
-                </Draggable>
-            </div>
+                </div>
+            </Draggable>
             <style jsx>{`
             .ztmy-pcmove-menu {
               display: block;
@@ -88,6 +83,11 @@ export default function Menu() {
               position: fixed;
               z-index: 1000;
             }
+            @media screen and (max-width: 991px) {
+        .ztmy-pcmove-menu {
+            display : none;
+          }
+        }
 
             .windowmini {
               height: 46px;
