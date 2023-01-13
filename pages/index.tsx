@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <>
       <div id="ztmy" className="home">
-        <HomePopup width={200} height={100} top={500} left={1100} time={0.9}></HomePopup>
-        <HomePopup width={250} height={180} top={300} left={1200} time={1.1}></HomePopup>
-        <HomePopup width={320} height={150} top={200} left={1300} time={0.7}></HomePopup>
+        <HomePopup width={200} height={100} top={60} left={70} time={0.9}></HomePopup>
+        <HomePopup width={250} height={180} top={55} left={80} time={1.1}></HomePopup>
+        <HomePopup width={320} height={150} top={80} left={70} time={0.7}></HomePopup>
         <div className="inner-wrapper">
           <picture className="top-bg">
             <source media="(min-width: 769px)" srcSet="/main_kv_pc.jpeg" />

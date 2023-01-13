@@ -79,8 +79,8 @@ export default function Popup({ width, height, top, left, time }: BoxLayoutProps
           display: block;
           position: fixed;
           z-index: 300;
-          top: ${top}px;
-          left: ${left}px;
+          top: ${top}%;
+          left: ${left}%;
           height: ${height}px;
           width: ${width}px;
           background-size: 100%;

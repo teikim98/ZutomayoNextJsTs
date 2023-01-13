@@ -3,25 +3,25 @@ import disco from "../components/Disco/disco.json";
 import Image from "next/image";
 
 interface discoProps {
-    id: number;
-    time: string;
-    title: string;
-    titleBr: string;
-    img: string;
-    imgLink: string;
+  id: number;
+  time: string;
+  title: string;
+  titleBr: string;
+  img: string;
+  imgLink: string;
 }
 
 export default function Release() {
-    return (
-        <>
-            <Detail content="release">
-                <section className="ztmy-disco-wrap">
-                    {disco.content.map((album: discoProps) => (
-                        <DiscoList key={album.id} {...album} />
-                    ))}
-                </section>
-            </Detail>
-            <style jsx>{`
+  return (
+    <>
+      <Detail content="release">
+        <section className="ztmy-disco-wrap">
+          {disco.content.map((album: discoProps) => (
+            <DiscoList key={album.id} {...album} />
+          ))}
+        </section>
+      </Detail>
+      <style jsx>{`
         .ztmy-disco-wrap {
           display: flex;
           align-items: flex-start;
@@ -37,45 +37,45 @@ export default function Release() {
           }
         }
       `}</style>
-        </>
-    );
+    </>
+  );
 }
 
 const DiscoList: React.FC<discoProps> = ({
-    id,
-    time,
-    title,
-    titleBr,
-    img,
-    imgLink,
+  id,
+  time,
+  title,
+  titleBr,
+  img,
+  imgLink,
 }) => {
-    return (
-        <>
-            <div className="ztmy-disco-item">
-                <div className="ztmy-disco-inner">
-                    <p className="ztmy-disco-date">
-                        <time className="">{time}</time>
-                    </p>
-                    <h3 className="ztmy-disco-ttl">
-                        {title}
-                        <br></br>
-                        {titleBr}
-                    </h3>
+  return (
+    <>
+      <div className="ztmy-disco-item">
+        <div className="ztmy-disco-inner">
+          <p className="ztmy-disco-date">
+            <time className="">{time}</time>
+          </p>
+          <h3 className="ztmy-disco-ttl">
+            {title}
+            <br></br>
+            {titleBr}
+          </h3>
 
-                    <figure className="ztmy-disco-image">
-                        <a href="/release/28/">
-                            <Image src={img} alt="img" width={180} height={180}></Image>
-                        </a>
-                    </figure>
+          <figure className="ztmy-disco-image">
+            <a href="/release/28/">
+              <img src={img} alt="Album Image" />
+            </a>
+          </figure>
 
-                    <div className="align-center">
-                        <a href="/release/28/" className="btn-link">
-                            <span className="">VIEW MORE</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <style jsx>{`
+          <div className="align-center">
+            <a href="/release/28/" className="btn-link">
+              <span className="">VIEW MORE</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <style jsx>{`
         .ztmy-disco-item {
           width: 50%;
           
@@ -101,15 +101,22 @@ const DiscoList: React.FC<discoProps> = ({
           text-align: center;
         }
 
-        .ztmy-disco-image:hover img{
-            transform: scale(1.1);
-        }
-
         .ztmy-disco-image a {
           overflow: hidden;
           display: block;
+          width:180px;
+          height:180px;
+        }
+        
+        .ztmy-disco-image a img{
+          transition : all 0.3s;
         }
 
+        .ztmy-disco-image:hover a img{
+            transform: scale(1.1);
+        }
+
+        
         .ztmy-disco-date {
           text-align: center;
           height: 1.5rem;
@@ -160,6 +167,6 @@ const DiscoList: React.FC<discoProps> = ({
             background-color : violet;
         }
       `}</style>
-        </>
-    );
+    </>
+  );
 };
