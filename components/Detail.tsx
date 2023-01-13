@@ -9,9 +9,6 @@ type AppLayoutProps = {
 };
 
 export default function Detail({ children, contentName }: AppLayoutProps) {
-  const showSettings = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-  };
 
   return (
     <>
