@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { use, useState } from "react";
 
+//컨텐츠 이름 Props
 type AppLayoutProps = {
   content: string;
 };
 
+//헤더 컴포넌트
 export default function Header({ content }: AppLayoutProps) {
 
   const [open, setOpen] = useState(false);

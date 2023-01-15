@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Draggable from "react-draggable";
 
+// 메인 페이지에 넘겨줄 Props들의 타입
 type BoxLayoutProps = {
   width: number;
   height: number;
@@ -11,6 +12,7 @@ type BoxLayoutProps = {
 };
 
 export default function Popup({ width, height, top, left, time }: BoxLayoutProps) {
+  //DragableBox를 쓰기위한 types
   interface Position {
     x: number;
     y: number;
@@ -24,11 +26,13 @@ export default function Popup({ width, height, top, left, time }: BoxLayoutProps
 
   const [active, setActive] = useState(true);
 
+  //클릭시 팝업창을 닫는 onClick 함수
   const onClickClose = (event: React.MouseEvent<HTMLAnchorElement>) => {
     setActive((prev) => !prev);
     event.preventDefault();
   };
 
+  //메인 페이지 렌더링 시 팝업되게 하는 useEffect
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {

@@ -1,3 +1,4 @@
+
 import React from "react";
 import Footer from "./Footer";
 
@@ -5,6 +6,7 @@ type AppLayoutProps = {
   children: React.ReactNode;
 };
 
+//전체 레이아웃 
 export default function Layout({ children }: AppLayoutProps) {
   return (
     <>
@@ -13,6 +15,8 @@ export default function Layout({ children }: AppLayoutProps) {
         <Footer />
       </div>
       <style jsx>{`
+
+          /* 기본 컨테이너 */
         .ztmy-container {
           position: relative;
           min-height: 100vh;

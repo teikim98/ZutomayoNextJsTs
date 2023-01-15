@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import '../styles/style.css'
 
 
+//레이아웃을 위한 _app.tsx
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>

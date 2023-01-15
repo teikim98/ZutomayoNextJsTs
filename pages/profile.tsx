@@ -1,5 +1,7 @@
 import Detail from "../components/Detail";
 
+
+//프로필 페이지
 export default function Profile() {
   return (
     <>

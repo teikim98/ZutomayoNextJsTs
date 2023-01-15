@@ -2,6 +2,7 @@ import Image from "next/image";
 import HomePopup from "../components/HomePopup";
 import Link from "next/link";
 
+//메인 페이지
 export default function Home() {
   return (
     <>
@@ -10,6 +11,7 @@ export default function Home() {
         <HomePopup width={250} height={180} top={55} left={80} time={1.1}></HomePopup>
         <HomePopup width={320} height={150} top={80} left={70} time={0.7}></HomePopup>
         <div className="inner-wrapper">
+          {/* 반응형 이미지 */}
           <picture className="top-bg">
             <source media="(min-width: 769px)" srcSet="/main_kv_pc.jpeg" />
             <source media="(max-width: 769px)" srcSet="/main_kv_sp.jpg" />
@@ -43,6 +45,7 @@ export default function Home() {
             </ul>
           </nav>
         </div>
+        {/* jsx충돌때문에 따로 제작한 footer */}
         <footer className="ztmy-footer">
           <div className="ztmy-footer-inner">
             <ul className="ztmy-sns">

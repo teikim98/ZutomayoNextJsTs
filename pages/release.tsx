@@ -1,7 +1,7 @@
 import Detail from "../components/Detail";
 import disco from "../components/Disco/disco.json";
 import Image from "next/image";
-
+//앨범 내부 data type
 interface discoProps {
   id: number;
   time: string;
@@ -11,6 +11,7 @@ interface discoProps {
   imgLink: string;
 }
 
+//Release 페이지
 export default function Release() {
   return (
     <>
@@ -41,6 +42,7 @@ export default function Release() {
   );
 }
 
+//DiscoProps에서 객체를 받아와 태그에 뿌려줌 
 const DiscoList: React.FC<discoProps> = ({
   id,
   time,

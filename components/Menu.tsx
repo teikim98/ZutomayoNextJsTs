@@ -34,22 +34,22 @@ export default function Menu() {
                         <ul className="ztmy-pcmove-cont">
                             <li>
                                 <Link href="/">
-                                    <p className="f-px">TOP</p>
+                                    <span className="f-px">TOP</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/news/">
-                                    <p className="f-px">NEWS</p>
+                                    <span className="f-px">NEWS</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/release/">
-                                    <p className="f-px">RELEASE</p>
+                                    <span className="f-px">RELEASE</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/profile/">
-                                    <p className="f-px">PROFILE</p>
+                                    <span className="f-px">PROFILE</span>
                                 </Link>
                             </li>
                         </ul>
