@@ -1,4 +1,5 @@
 {
-    "editor.formatOnSave": true,
-    "workbench.settings.useSplitJSON": false
+  "editor.formatOnSave": true,
+  "workbench.settings.useSplitJSON": false,
+  "git.ignoreLimitWarning": true
 }
