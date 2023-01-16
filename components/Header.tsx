@@ -197,6 +197,7 @@ export default function Header({ content }: AppLayoutProps) {
 
         .ztmy-header-menu .ztmy-burger {
           padding: 5px;
+          margin: 0 20px;
         }
 
         .ztmy-header-menu .ztmy-burger-icon {
@@ -276,11 +277,11 @@ export default function Header({ content }: AppLayoutProps) {
         }
 
         .ztmy-fix-menu-inner {
-          padding: 80px 0px 0 32px;
+          padding: 80px 0px 0 0px;
         }
 
         .ztmy-menu-cont li {
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.5rem;  
         }
         .ztmy-menu-cont li a {
           display: inline-block;
@@ -288,6 +289,11 @@ export default function Header({ content }: AppLayoutProps) {
           font-size: 18px;
           line-height: 1;
           letter-spacing: 0.1rem;
+        }
+        .ztmy-menu-sns{
+          justify-content : center;
+          margin-top : 20px;
+          display:flex;
         }
       `}</style>
     </>

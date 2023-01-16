@@ -42,7 +42,7 @@ export default function Release() {
   );
 }
 
-//DiscoProps에서 객체를 받아와 태그에 뿌려줌 
+//DiscoProps에서 객체를 받아와 태그에 뿌려줌
 const DiscoList: React.FC<discoProps> = ({
   id,
   time,
@@ -80,7 +80,6 @@ const DiscoList: React.FC<discoProps> = ({
       <style jsx>{`
         .ztmy-disco-item {
           width: 50%;
-          
         }
 
         @media (min-width: 769px) {
@@ -94,6 +93,9 @@ const DiscoList: React.FC<discoProps> = ({
 
         .ztmy-disco-inner {
           padding: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .ztmy-disco-image {
@@ -106,19 +108,18 @@ const DiscoList: React.FC<discoProps> = ({
         .ztmy-disco-image a {
           overflow: hidden;
           display: block;
-          width:180px;
-          height:180px;
-        }
-        
-        .ztmy-disco-image a img{
-          transition : all 0.3s;
+          width: 180px;
+          height: 180px;
         }
 
-        .ztmy-disco-image:hover a img{
-            transform: scale(1.1);
+        .ztmy-disco-image a img {
+          transition: all 0.3s;
         }
 
-        
+        .ztmy-disco-image:hover a img {
+          transform: scale(1.1);
+        }
+
         .ztmy-disco-date {
           text-align: center;
           height: 1.5rem;
@@ -141,7 +142,6 @@ const DiscoList: React.FC<discoProps> = ({
           flex-direction: column;
           margin-bottom: 10px;
           font-size: 0.8rem;
-
         }
 
         @media (min-width: 769px) {
@@ -158,15 +158,14 @@ const DiscoList: React.FC<discoProps> = ({
           background-color: #000000;
           color: #ffffff;
           line-height: 33px;
-          padding:   0 0.5rem;
+          padding: 0 0.5rem;
           font-size: 1.5rem;
           width: auto;
           height: 33px;
           transition: background-color 0.3s;
-          
         }
-        .btn-link span:hover{
-            background-color : violet;
+        .btn-link span:hover {
+          background-color: violet;
         }
       `}</style>
     </>
