@@ -13,7 +13,14 @@ const NewsDetail = () => {
     return (
         <Detail contentName='News'>
             <p>
-                post : {id} 
+                {newsArr.content[newsId - 1].time}
+            </p>
+            <p>
+                {newsArr.content[newsId - 1].title}
+            </p>
+            <br />
+            <p>
+                {newsArr.content[newsId - 1].inside}
             </p>
         </Detail>
 
