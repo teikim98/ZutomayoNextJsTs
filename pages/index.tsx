@@ -1,15 +1,16 @@
 import Image from "next/image";
 import HomePopup from "../components/HomePopup";
 import Link from "next/link";
+import newsConent from '../components/News/news.json'
 
 //메인 페이지
 export default function Home() {
   return (
     <>
       <div id="ztmy" className="home">
-        <HomePopup width={200} height={100} top={60} left={70} time={0.9}></HomePopup>
-        <HomePopup width={250} height={180} top={55} left={80} time={1.1}></HomePopup>
-        <HomePopup width={320} height={150} top={80} left={70} time={0.7}></HomePopup>
+        <HomePopup width={250} height={140} top={60} left={70} time={0.9} title={'News ' + newsConent.content[0].time} content={newsConent.content[0].title} id={1}></HomePopup>
+        <HomePopup width={250} height={150} top={55} left={80} time={1.1} title={'News ' + newsConent.content[1].time} content={newsConent.content[1].title} id={2}></HomePopup>
+        <HomePopup width={320} height={100} top={80} left={70} time={0.7} title={'News ' + newsConent.content[2].time} content={newsConent.content[2].title} id={3}></HomePopup>
         <div className="inner-wrapper">
           {/* 반응형 이미지 */}
           <picture className="top-bg">
@@ -28,7 +29,7 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link className="f-px" href="/news/">
+                <Link className="f-px" href="/news">
                   <span>NEWS</span>
                 </Link>
               </li>

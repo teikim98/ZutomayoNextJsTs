@@ -1,23 +1,24 @@
+import Link from "next/link";
 import Detail from "../components/Detail";
 import newsContent from "../components/News/news.json";
 
 interface newsProps {
-    id: number;
-    time: string;
-    title: string;
+  id: number;
+  time: string;
+  title: string;
 }
 
 //뉴스 페이지
 export default function News() {
-    return (
-        <>
-            <Detail contentName="News">
-                {newsContent.content.map((news: newsProps) => (
-                    <section key={news.id} className="ztmy-news-wrap">
-                        <NewsList key={news.id} {...news} />
-                    </section>
-                ))}
-                <style jsx>{`
+  return (
+    <>
+      <Detail contentName="News">
+        {newsContent.content.map((news: newsProps) => (
+          <section key={news.id} className="ztmy-news-wrap">
+            <NewsList key={news.id} {...news} />
+          </section>
+        ))}
+        <style jsx>{`
 
                 
           .ztmy-news-wrap {
@@ -28,26 +29,26 @@ export default function News() {
             margin-top: 80px;
           }
         `}</style>
-            </Detail>
-        </>
-    );
+      </Detail>
+    </>
+  );
 }
 
 const NewsList: React.FC<newsProps> = ({ id, time, title }) => {
-    return (
-        <>
-            <div className="ztmy-under-inner">
-                <div className="ztmy-topics-head">
-                    <p className="bold">{time}</p>
-                    <h3 className="bold">{title}</h3>
-                </div>
-                <div className="ztmy-topics-more">
-                    <a className="btn-link" href="#">
-                        <span className="bold">View More</span>
-                    </a>
-                </div>
-            </div>
-            <style jsx>{`
+  return (
+    <>
+      <div className="ztmy-under-inner">
+        <div className="ztmy-topics-head">
+          <p className="bold">{time}</p>
+          <h3 className="bold">{title}</h3>
+        </div>
+        <div className="ztmy-topics-more">
+          <Link href="/news/[id]" as={`/news/${id}`} className='btn-link-news'>
+            <span className="bold">View More</span>
+          </Link>
+        </div>
+      </div>
+      <style jsx>{`
         @media screen and (min-width: 769px) {
           .ztmy-under-inner {
             padding: 0 80px;
@@ -81,7 +82,7 @@ const NewsList: React.FC<newsProps> = ({ id, time, title }) => {
           color: #fff;
           line-height: 22px;
           padding: 0 0.5rem;
-          font-size: 10px;
+          font-size: 20px;
           width: auto;
           height: 22px;
           transition: background-color 0.3s;
@@ -90,6 +91,6 @@ const NewsList: React.FC<newsProps> = ({ id, time, title }) => {
           background-color: violet;
         }
       `}</style>
-        </>
-    );
+    </>
+  );
 };

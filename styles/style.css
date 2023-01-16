@@ -69,3 +69,24 @@ li {
 .ztmy-top--nav li a:hover::before {
   width: 100%;
 }
+
+.btn-link-news {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 400;
+  color: #000;
+}
+.btn-link-news span {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  line-height: 22px;
+  padding: 0 0.5rem;
+  font-size: 20px;
+  width: auto;
+  height: 22px;
+  transition: background-color 0.3s;
+}
+.btn-link-news span:hover {
+  background-color: violet;
+}

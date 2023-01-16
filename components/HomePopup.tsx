@@ -9,9 +9,12 @@ type BoxLayoutProps = {
   top: number;
   left: number;
   time: number;
+  title: string;
+  content: string;
+  id: number;
 };
 
-export default function Popup({ width, height, top, left, time }: BoxLayoutProps) {
+export default function Popup({ width, height, top, left, time, title, content, id }: BoxLayoutProps) {
   //DragableBox를 쓰기위한 types
   interface Position {
     x: number;
@@ -51,12 +54,12 @@ export default function Popup({ width, height, top, left, time }: BoxLayoutProps
             }
             id="pcMenu"
           >
-            <div className="title f-px">Popup</div>
+            <div className="title f-px">{title}</div>
             <div className="ztmy-pcmove-inner">
               <ul className="ztmy-pcmove-cont">
                 <li>
-                  <Link href="/">
-                    <p className="f-px">inside</p>
+                  <Link href="/news/[id]" as={`/news/${id}`}>
+                    <p className="f-px">{content}</p>
                   </Link>
                 </li>
               </ul>
@@ -137,7 +140,7 @@ export default function Popup({ width, height, top, left, time }: BoxLayoutProps
           font-weight: bold;
         }
         .f-px {
-          font-size: 1rem;
+          font-size: 0.8rem;
           font-weight: regular;
           font-style: normal;
           transition: 0.3s;
