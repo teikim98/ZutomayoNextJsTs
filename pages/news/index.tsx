@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Detail from "../components/Detail";
-import newsContent from "../components/News/news.json";
+import Detail from "../../components/Detail";
+import newsContent from "../../components/News/news.json";
 
 interface newsProps {
   id: number;

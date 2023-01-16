@@ -9,12 +9,6 @@ const NewsDetail = () => {
 
     const newsId = parseInt(router.query.id as string, 10)
 
-    interface Content {
-        id: number;
-        time: string;
-        title: string;
-        inside: string;
-    }
 
     return (
         <Detail contentName='News'>
