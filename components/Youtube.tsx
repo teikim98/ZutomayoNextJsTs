@@ -1,16 +1,14 @@
 
 
 function Youtube() {
-    <div className="yt-container">
-        <div>
 
-        </div>
-    </div>
 
     return (
         <>
-            <div>
-
+            <div className="yt-container">
+                <div className="yt-wrapper">
+                    <div className="yt-moveimg"></div>
+                </div>
             </div>
             <style jsx>{`
             
