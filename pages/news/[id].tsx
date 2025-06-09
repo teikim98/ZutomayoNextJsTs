@@ -14,22 +14,14 @@ const NewsDetail = () => {
 
     return (
         <Detail contentName='News'>
-            <div className='news-container'>
+            <div className='news-container mt-[50px]'>
                 <h2>
                     {newsArr.content[newsId].title}
                 </h2>
-                <p className='news-content'>
+                <p className='news-content mt-[100px]'>
                     {newsArr.content[newsId].inside}
                 </p>
             </div>
-            <style jsx>{`
-                .news-container{
-                    margin-top : 50px;
-                }
-                .news-content {
-                    margin-top : 100px;
-                }
-            `}</style>
         </Detail>
 
     )

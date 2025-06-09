@@ -6,13 +6,13 @@ export default function Profile() {
   return (
     <>
       <Detail contentName="Profile">
-        <section className="ztmy-profile-main">
+        <section className="ztmy-profile-main text-[0px] leading-none mb-10">
           <img src="/zutomayo_profile.jpeg" alt="" />{" "}
         </section>
-        <section className="ztmy-profile-text">
-          <div className="ztmy-under-inner">
+        <section className="ztmy-profile-text m-[0_20px_40px] md:m-[0_50px_120px]">
+          <div className="ztmy-under-inner m-auto p-0 text-center md:p-[80px_80px_0]">
             <p>
-              <img src="/logo2.svg" alt="Profile Logo" />
+              <img className="w-[408px] max-w-[70%] h-auto mx-auto" src="/logo2.svg" alt="Profile Logo" />
             </p>
             <p>
               作詞作曲ボーカル ACAね
@@ -27,47 +27,6 @@ export default function Profile() {
           </div>
         </section>
       </Detail>
-      <style jsx>{`
-        .ztmy-profile-main {
-          font-size: 0;
-          line-height: 0;
-          margin: 0 0 40px 0;
-        }
-        .ztmy-profile-text {
-          margin: 0 20px 40px 20px;
-        }
-        @media screen and (min-width: 769px) {
-          .ztmy-profile-text {
-            margin: 0 50px 120px 50px;
-          }
-        }
-
-        .ztmy-under-inner {
-          margin: auto;
-          padding: 0px;
-          text-align: center;
-        }
-
-        @media screen and (min-width: 769px) {
-          .ztmy-under-inner {
-            padding: 80px 80px 0px 80px;
-          }
-        }
-
-        .ztmy-profile-text p {
-          margin: 1rem auto;
-        }
-
-        .ztmy-profile-text img {
-          width: 408px;
-          height: 59px;
-          max-width: 70%;
-          height: auto;
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      `}</style>
     </>
   );
 }
