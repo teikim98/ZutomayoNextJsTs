@@ -16,28 +16,12 @@ export default function Release() {
   return (
     <>
       <Detail contentName="release">
-        <section className="ztmy-disco-wrap">
+        <section className="ztmy-disco-wrap flex flex-wrap items-start justify-between md:justify-start md:mx-auto md:p-20">
           {disco.content.map((album: discoProps) => (
             <DiscoList key={album.id} {...album} />
           ))}
         </section>
       </Detail>
-      <style jsx>{`
-        .ztmy-disco-wrap {
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          flex-wrap: wrap;
-        }
-
-        @media (min-width: 769px) {
-          .ztmy-disco-wrap {
-            justify-content: flex-start;
-            margin: 0 auto;
-            padding: 80px;
-          }
-        }
-      `}</style>
     </>
   );
 }
@@ -53,121 +37,30 @@ const DiscoList: React.FC<discoProps> = ({
 }) => {
   return (
     <>
-      <div className="ztmy-disco-item">
-        <div className="ztmy-disco-inner">
-          <p className="ztmy-disco-date">
+      <div className="ztmy-disco-item w-1/2 md:w-1/4 md:max-w-[270px] text-center md:m-[0_auto_80px]">
+        <div className="ztmy-disco-inner p-[10px] flex flex-col items-center">
+          <p className="ztmy-disco-date text-center h-[1.5rem] font-bold block">
             <time className="">{time}</time>
           </p>
-          <h3 className="ztmy-disco-ttl">
+          <h3 className="ztmy-disco-ttl bg-[url('/disco_ttl_bg.png')] bg-center bg-no-repeat bg-contain p-[0_0_6px] h-[16vw] w-full flex items-center justify-center flex-col mb-[10px] text-[0.8rem] md:h-[100px]">
             {title}
             <br></br>
             {titleBr}
           </h3>
 
-          <figure className="ztmy-disco-image">
-            <a href="/release/28/">
-              <img src={img} alt="Album Image" />
+          <figure className="ztmy-disco-image leading-none text-center mb-4">
+            <a href="/release/28/" className="group block overflow-hidden w-[180px] h-[180px]">
+              <img className="transition-transform group-hover:scale-110" src={img} alt="Album Image" />
             </a>
           </figure>
 
           <div className="align-center">
-            <a href="/release/28/" className="btn-link">
-              <span className="">VIEW MORE</span>
+            <a href="/release/28/" className="btn-link inline-block">
+              <span className="block bg-black text-white leading-[33px] px-2 text-[1.5rem] transition-colors hover:bg-violet-500">VIEW MORE</span>
             </a>
           </div>
         </div>
       </div>
-      <style jsx>{`
-        .ztmy-disco-item {
-          width: 50%;
-        }
-
-        @media (min-width: 769px) {
-          .ztmy-disco-item {
-            width: 25%;
-            max-width: 270px;
-            text-align: center;
-            margin: 0 auto 80px;
-          }
-        }
-
-        .ztmy-disco-inner {
-          padding: 10px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .ztmy-disco-image {
-          line-height: 0;
-          font-size: 0;
-          margin-bottom: 1rem;
-          text-align: center;
-        }
-
-        .ztmy-disco-image a {
-          overflow: hidden;
-          display: block;
-          width: 180px;
-          height: 180px;
-        }
-
-        .ztmy-disco-image a img {
-          transition: all 0.3s;
-        }
-
-        .ztmy-disco-image:hover a img {
-          transform: scale(1.1);
-        }
-
-        .ztmy-disco-date {
-          text-align: center;
-          height: 1.5rem;
-          display: block;
-          font-weight: bold;
-        }
-
-        .ztmy-disco-ttl {
-          background-image: url("/disco_ttl_bg.png");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
-          padding: 0 0px 6px;
-          height: 16vw;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          text-align: center;
-          justify-content: center;
-          flex-direction: column;
-          margin-bottom: 10px;
-          font-size: 0.8rem;
-        }
-
-        @media (min-width: 769px) {
-          .ztmy-disco-ttl {
-            height: 100px;
-          }
-        }
-        .btn-link {
-          display: inline-block;
-          text-decoration: none;
-        }
-        .btn-link span {
-          display: block;
-          background-color: #000000;
-          color: #ffffff;
-          line-height: 33px;
-          padding: 0 0.5rem;
-          font-size: 1.5rem;
-          width: auto;
-          height: 33px;
-          transition: background-color 0.3s;
-        }
-        .btn-link span:hover {
-          background-color: violet;
-        }
-      `}</style>
     </>
   );
 };

@@ -13,13 +13,13 @@ export default function Header({ content }: AppLayoutProps) {
 
   return (
     <>
-      <header className="ztmy-header">
-        <div className="header-inner">
+      <header className="ztmy-header text-center m-0 relative h-[54px] min-h-[48px] flex w-full items-center justify-center md:h-[94px] md:mx-auto">
+        <div className="header-inner flex items-center justify-between w-full md:w-[50vw] md:mx-auto">
           <div
             onClick={() => {
               setOpen(prev => !prev)
             }}
-            className={open ? "ztmy-header-menu-open ztmy-header-menu" : "ztmy-header-menu"}
+            className={`${open ? 'burger-open' : ''} ztmy-header-menu relative z-[1000] cursor-pointer md:hidden`}
             id="ztmy-header-menu"
           >
             <div className="ztmy-burger" id="ztmy-burger">
@@ -30,21 +30,21 @@ export default function Header({ content }: AppLayoutProps) {
               </div>
             </div>
           </div>
-          <div className="ztmy-header-logo">
+          <div className="ztmy-header-logo block w-[50vw] max-w-[360px] h-auto m-auto text-[0px] leading-none md:w-[36vw] md:max-w-full">
             <h1>
               <Link href="/">
                 <img src="/logo.svg" alt="" />
               </Link>
             </h1>
           </div>
-          <div className="ztmy-header-title">
-            <h2 className="f-tt--b">
-              <span>{content}</span>
+          <div className="ztmy-header-title text-center pl-0 md:text-center basis-[18vw]">
+            <h2 className="font-bold">
+              <span className="inline bg-black text-white px-[0.2rem] leading-[1.5] md:text-[2.5vw]">{content}</span>
             </h2>
           </div>
         </div>
-        <nav className={open ? "ztmy-fix-menu-open" : "ztmy-fix-menu"}>
-          <div className="ztmy-fix-menu-inner">
+        <nav className={open ? "fixed left-0 top-0 w-[300px] max-w-[90vw] h-full overflow-hidden bg-[#8027d0] z-[990] transition-[left]" : "fixed left-[-100vw] top-0 w-[300px] max-w-[90vw] h-full overflow-hidden bg-[#8027d0] z-[990] transition-[left]"}>
+          <div className="ztmy-fix-menu-inner p-[80px_0_0]">
             <ul className="ztmy-menu-cont">
               <li>
                 <Link href="/">
@@ -92,210 +92,6 @@ export default function Header({ content }: AppLayoutProps) {
           </div>
         </nav>
       </header>
-
-      <style jsx>{`
-        .ztmy-header {
-          text-align: center;
-          margin: 0;
-          position: relative;
-          height: 54px;
-          min-height: 48px;
-          display: flex;
-          width: 100%;
-          align-items: center;
-          justify-content: center;
-        }
-        @media screen and (min-width: 769px) {
-          .ztmy-header {
-            height: 94px;
-            margin: 0 auto;
-          }
-        }
-        .header-inner {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-        }
-        @media screen and (min-width: 769px) {
-          .header-inner {
-            width: 50vw;
-            margin: 0 auto;
-          }
-        }
-        .ztmy-header-logo {
-          display: block;
-          width: 50vw;
-          max-width: 360px;
-          height: auto;
-          margin: 0 auto;
-          font-size: 0;
-          line-height: 0;
-        }
-        @media screen and (min-width: 769px) {
-          .ztmy-header-logo {
-            width: 36vw;
-            max-width: 100%;
-          }
-        }
-        .ztmy-header-title {
-          text-align: center;
-          padding: 0 0 0 3px;
-          flex-basis: 18vw;
-        }
-        @media screen and (min-width: 769px) {
-          .ztmy-header-title {
-            text-align: center;
-          }
-        }
-        .ztmy-header-title h2 {
-          margin: 0;
-          padding: 0;
-          line-height: 0;
-          display: block;
-          font-size: 1.5em;
-          margin-block-start: 0.83em;
-          margin-block-end: 0.83em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-        }
-        @media screen and (min-width: 769px) {
-          .ztmy-header-title h2 span {
-            font-size: 2.5vw;
-          }
-        }
-        .ztmy-header-title h2 span {
-          display: inline;
-          background-color: #000000;
-          color: #ffffff;
-          padding: 0 0.2rem;
-          line-height: 1.5;
-        }
-        .f-tt--b {
-          font-style: normal;
-          font-weight: 700;
-        }
-        .ztmy-header-menu {
-          cursor: pointer;
-          position: relative;
-          z-index: 1000;
-        }
-
-        @media (min-width: 768px) and (max-width: 991px) {
-          .ztmy-header-menu {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-          }
-        }
-
-        @media (min-width: 992px) {
-          .ztmy-header-menu {
-            display: none;
-          }
-        }
-
-        .ztmy-header-menu .ztmy-burger {
-          padding: 5px;
-          margin: 0 20px;
-        }
-
-        .ztmy-header-menu .ztmy-burger-icon {
-          position: relative;
-          width: 24px;
-        }
-
-        .ztmy-header-menu .ztmy-burger-line {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background-color: #000;
-          border-radius: 2px;
-          transition: all 0.3s;
-        }
-
-        .ztmy-header-menu .ztmy-burger-line:nth-child(1) {
-          top: -7px;
-        }
-
-        .ztmy-header-menu .ztmy-burger-line:nth-child(2) {
-          top: 0px;
-        }
-
-        .ztmy-header-menu .ztmy-burger-line:nth-child(3) {
-          top: 7px;
-        }
-
-        .ztmy-header-menu-open .ztmy-burger-line {
-          background-color : white;
-        }
-
-        .ztmy-header-menu-open .ztmy-burger-line:nth-child(1) {
-          top:0;
-			transform: rotate(-45deg);
-        }
-
-        .ztmy-header-menu-open .ztmy-burger-line:nth-child(2) {
-          height: 0px;
-        }
-
-        .ztmy-header-menu-open .ztmy-burger-line:nth-child(3) {
-          top:0;
-			transform: rotate(45deg);
-        }
-
-
-
-        .ztmy-fix-menu {
-          display: block;
-          position: fixed;
-          left: -100vw;
-          top: 0;
-          width: 300px;
-          max-width: 90vw;
-          height: 100%;
-          overflow: hidden;
-          background-color: #8027d0;
-          z-index: 990;
-          transition: left 0.3s;
-        }
-
-        .ztmy-fix-menu-open {
-          display: block;
-          position: fixed;
-          left: 0;
-          top: 0;
-          width: 300px;
-          max-width: 90vw;  
-          height: 100%;
-          overflow: hidden;
-          background-color: #8027d0;
-          z-index: 990;
-          transition: left 0.3s;
-        }
-
-        .ztmy-fix-menu-inner {
-          padding: 80px 0px 0 0px;
-        }
-
-        .ztmy-menu-cont li {
-          margin-bottom: 0.5rem;  
-        }
-        .ztmy-menu-cont li a {
-          display: inline-block;
-          color: #ffffff;
-          font-size: 18px;
-          line-height: 1;
-          letter-spacing: 0.1rem;
-        }
-        .ztmy-menu-sns{
-          justify-content : center;
-          margin-top : 20px;
-          display:flex;
-        }
-      `}</style>
     </>
   );
 }

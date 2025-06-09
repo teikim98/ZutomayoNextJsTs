@@ -10,23 +10,10 @@ type AppLayoutProps = {
 export default function Layout({ children }: AppLayoutProps) {
   return (
     <>
-      <div className="ztmy-container">
+      <div className="ztmy-container relative min-h-screen max-w-screen bg-[url('/bg_contents_pc.jpeg')] bg-top bg-repeat-y bg-[length:100%]">
         <div>{children}</div>
         <Footer />
       </div>
-      <style jsx>{`
-
-          /* 기본 컨테이너 */
-        .ztmy-container {
-          position: relative;
-          min-height: 100vh;
-          max-width: 100vw;
-          background-repeat: repeat-y;
-          background-position: top center;
-          background-image: url(/bg_contents_pc.jpeg);
-          background-size: 100%;
-        }
-      `}</style>
     </>
   );
 }

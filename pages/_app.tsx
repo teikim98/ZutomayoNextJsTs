@@ -1,7 +1,7 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 import Layout from "../components/Layout";
-import '../styles/style.css'
+import '../styles/globals.css'
 
 
 //레이아웃을 위한 _app.tsx
