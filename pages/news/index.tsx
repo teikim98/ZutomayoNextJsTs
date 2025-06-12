@@ -14,7 +14,7 @@ export default function News() {
     <>
       <Detail contentName="News">
         {newsContent.content.map((news: newsProps) => (
-          <section key={news.id} className="ztmy-news-wrap mb-[25px] p-0 first:mt-[80px]">
+          <section key={news.id}>
             <NewsList key={news.id} {...news} />
           </section>
         ))}
@@ -26,14 +26,14 @@ export default function News() {
 const NewsList: React.FC<newsProps> = ({ id, time, title }) => {
   return (
     <>
-      <div className="ztmy-under-inner m-[20px_auto] p-[0_20px] md:p-[0_80px]">
-        <div className="ztmy-topics-head mb-[15px]">
-          <p className="font-bold">{time}</p>
-          <h3 className="font-bold">{title}</h3>
+      <div>
+        <div>
+          <p>{time}</p>
+          <h3>{title}</h3>
         </div>
-        <div className="ztmy-topics-more pb-4 border-b border-black text-center">
-          <Link href="/news/[id]" as={`/news/${id}`} className="inline-block text-black">
-            <span className="block bg-black text-white leading-[22px] px-2 text-[20px] transition-colors hover:bg-violet-500 font-bold">View More</span>
+        <div>
+          <Link href="/news/[id]" as={`/news/${id}`}>
+            <span>View More</span>
           </Link>
         </div>
       </div>

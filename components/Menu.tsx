@@ -30,27 +30,27 @@ export default function Menu() {
                     style={{ top: '280px', left: '26px', height: '220px', width: '150px' }}
                     id="pcMenu"
                 >
-                    <div className="title f-px">Menu</div>
-                    <div className="ztmy-pcmove-inner">
-                        <ul className="ztmy-pcmove-cont">
+                    <div className="title">Menu</div>
+                    <div>
+                        <ul>
                             <li>
                                 <Link href="/">
-                                    <span className="f-px">TOP</span>
+                                    <span>TOP</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/news/">
-                                    <span className="f-px">NEWS</span>
+                                    <span>NEWS</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/release/">
-                                    <span className="f-px">RELEASE</span>
+                                    <span>RELEASE</span>
                                 </Link>
                             </li>
                             <li>
                                 <Link href="/profile/">
-                                    <span className="f-px">PROFILE</span>
+                                    <span>PROFILE</span>
                                 </Link>
                             </li>
                         </ul>

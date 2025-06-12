@@ -13,61 +13,61 @@ export default function Header({ content }: AppLayoutProps) {
 
   return (
     <>
-      <header className="ztmy-header text-center m-0 relative h-[54px] min-h-[48px] flex w-full items-center justify-center md:h-[94px] md:mx-auto">
-        <div className="header-inner flex items-center justify-between w-full md:w-[50vw] md:mx-auto">
+      <header>
+        <div>
           <div
             onClick={() => {
               setOpen(prev => !prev)
             }}
-            className={`${open ? 'burger-open' : ''} ztmy-header-menu relative z-[1000] cursor-pointer md:hidden`}
+            className={`${open ? 'burger-open' : ''}`}
             id="ztmy-header-menu"
           >
-            <div className="ztmy-burger" id="ztmy-burger">
-              <div className="ztmy-burger-icon">
-                <span id="ztmy-burger-1" className="ztmy-burger-line"></span>
-                <span id="ztmy-burger-2" className="ztmy-burger-line"></span>
-                <span id="ztmy-burger-3" className="ztmy-burger-line"></span>
+            <div id="ztmy-burger">
+              <div>
+                <span id="ztmy-burger-1"></span>
+                <span id="ztmy-burger-2"></span>
+                <span id="ztmy-burger-3"></span>
               </div>
             </div>
           </div>
-          <div className="ztmy-header-logo block w-[50vw] max-w-[360px] h-auto m-auto text-[0px] leading-none md:w-[36vw] md:max-w-full">
+          <div>
             <h1>
               <Link href="/">
                 <img src="/logo.svg" alt="" />
               </Link>
             </h1>
           </div>
-          <div className="ztmy-header-title text-center pl-0 md:text-center basis-[18vw]">
-            <h2 className="font-bold">
-              <span className="inline bg-black text-white px-[0.2rem] leading-[1.5] md:text-[2.5vw]">{content}</span>
+          <div>
+            <h2>
+              <span>{content}</span>
             </h2>
           </div>
         </div>
         <nav className={open ? "fixed left-0 top-0 w-[300px] max-w-[90vw] h-full overflow-hidden bg-[#8027d0] z-[990] transition-[left]" : "fixed left-[-100vw] top-0 w-[300px] max-w-[90vw] h-full overflow-hidden bg-[#8027d0] z-[990] transition-[left]"}>
-          <div className="ztmy-fix-menu-inner p-[80px_0_0]">
-            <ul className="ztmy-menu-cont">
+          <div>
+            <ul>
               <li>
                 <Link href="/">
-                  <p className="f-px">TOP</p>
+                  <p>TOP</p>
                 </Link>
               </li>
               <li>
                 <Link href="/news">
-                  <p className="f-px">NEWS</p>
+                  <p>NEWS</p>
                 </Link>
               </li>
               <li>
                 <Link href="/release">
-                  <p className="f-px">RELEASE</p>
+                  <p>RELEASE</p>
                 </Link>
               </li>
               <li>
                 <Link href="/profile">
-                  <p className="f-px">PROFILE</p>
+                  <p>PROFILE</p>
                 </Link>
               </li>
             </ul>
-            <ul className="ztmy-menu-sns">
+            <ul>
               <li>
                 <a href="https://www.youtube.com/channel/UCv6P5nsS9rP4tDtFlqLU_QQ">
                   <img src="/icon_yt.png" alt="Youtube" />

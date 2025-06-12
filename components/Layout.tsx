@@ -10,7 +10,7 @@ type AppLayoutProps = {
 export default function Layout({ children }: AppLayoutProps) {
   return (
     <>
-      <div className="ztmy-container relative min-h-screen max-w-screen bg-[url('/bg_contents_pc.jpeg')] bg-top bg-repeat-y bg-[length:100%]">
+      <div>
         <div>{children}</div>
         <Footer />
       </div>

@@ -6,13 +6,13 @@ export default function Profile() {
   return (
     <>
       <Detail contentName="Profile">
-        <section className="ztmy-profile-main text-[0px] leading-none mb-10">
+        <section>
           <img src="/zutomayo_profile.jpeg" alt="" />{" "}
         </section>
-        <section className="ztmy-profile-text m-[0_20px_40px] md:m-[0_50px_120px]">
-          <div className="ztmy-under-inner m-auto p-0 text-center md:p-[80px_80px_0]">
+        <section>
+          <div>
             <p>
-              <img className="w-[408px] max-w-[70%] h-auto mx-auto" src="/logo2.svg" alt="Profile Logo" />
+              <img src="/logo2.svg" alt="Profile Logo" />
             </p>
             <p>
               作詞作曲ボーカル ACAね
